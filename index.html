@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0f172a">
+  <meta name="description" content="Um cantinho especial para celebrar a nossa história.">
+
+  <title>Eu te amo, mô 💙</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --azul-claro: #e0f2fe;
+      --azul-medio: #38bdf8;
+      --azul-principal: #0284c7;
+      --azul-marinho: #0f172a;
+      --azul-escuro: #1e293b;
+      --branco: #ffffff;
+      --cinza-suave: #f8fafc;
+      --texto-cor: #334155;
+      --sombra: 0 10px 25px -5px rgba(2,132,199,.10),
+                0 8px 10px -6px rgba(2,132,199,.10);
+      --transicao: all .3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 20px;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--cinza-suave);
+      color: var(--texto-cor);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    /* TELA INICIAL */
+
+    .hero {
+      background:
+        radial-gradient(circle at 20% 20%, rgba(56,189,248,.15), transparent 35%),
+        radial-gradient(circle at 80% 80%, rgba(2,132,199,.18), transparent 35%),
+        linear-gradient(135deg, var(--azul-marinho), var(--azul-escuro));
+      color: var(--branco);
+      min-height: 100vh;
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem 1.5rem;
+      position: relative;
+      isolation: isolate;
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "♡";
+      position: absolute;
+      color: rgba(224,242,254,.12);
+      font-size: 12rem;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .hero::before {
+      top: 5%;
+      left: -2rem;
+      transform: rotate(-20deg);
+    }
+
+    .hero::after {
+      right: -2rem;
+      bottom: 3%;
+      transform: rotate(20deg);
+    }
+
+    .hero-label {
+      color: var(--azul-medio);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: .75rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 6vw, 4.5rem);
+      font-weight: 800;
+      line-height: 1.2;
+      max-width: 850px;
+      margin-bottom: 1.25rem;
+      color: var(--azul-claro);
+    }
+
+    .hero p {
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      font-weight: 300;
+      max-width: 620px;
+      margin-bottom: 2rem;
+      color: #e2e8f0;
+    }
+
+    .btn-principal {
+      display: inline-flex;
+      gap: .7rem;
+      align-items: center;
+      justify-content: center;
+      background: var(--azul-medio);
+      color: var(--azul-marinho);
+      padding: .95rem 1.7rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      box-shadow: var(--sombra);
+      transition: var(--transicao);
+    }
+
+    .btn-principal:hover {
+      background: var(--branco);
+      transform: translateY(-3px);
+    }
+
+    .hero-note {
+      margin-top: 2.5rem;
+      font-size: .85rem;
+      color: #cbd5e1;
+    }
+
+    /* ESTRUTURA */
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+    }
+
+    section {
+      margin-bottom: 5rem;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: clamp(1.7rem, 4vw, 2.2rem);
+      color: var(--azul-marinho);
+      margin-bottom: .6rem;
+      line-height: 1.3;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: #64748b;
+      margin: 0 auto 2.5rem;
+      max-width: 620px;
+      font-size: .95rem;
+    }
+
+    .section-title::after {
+      content: "";
+      display: block;
+      width: 52px;
+      height: 3px;
+      background: var(--azul-medio);
+      margin: .7rem auto 0;
+      border-radius: 5px;
+    }
+
+    /* LINHA DO TEMPO */
+
+    .timeline {
+      position: relative;
+      padding-left: 2rem;
+      border-left: 3px solid var(--azul-claro);
+      margin-left: .5rem;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2rem;
+      background: var(--branco);
+      padding: 1.5rem;
+      border-radius: 14px;
+      box-shadow: var(--sombra);
+      transition: var(--transicao);
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline-item:hover {
+      transform: translateX(5px);
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -2.65rem;
+      top: 1.7rem;
+      width: 15px;
+      height: 15px;
+      background: var(--azul-principal);
+      border-radius: 50%;
+      border: 4px solid var(--cinza-suave);
+    }
+
+    .timeline-date {
+      font-size: .78rem;
+      font-weight: 800;
+      color: var(--azul-principal);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: .5rem;
+    }
+
+    .timeline-item h3 {
+      color: var(--azul-marinho);
+      margin-bottom: .5rem;
+      font-size: 1.15rem;
+    }
+
+    /* CONTADORES */
+
+    .counters-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
+
+    .counter-card {
+      background: var(--branco);
+      padding: 2rem 1.25rem;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: var(--sombra);
+      border-top: 4px solid var(--azul-principal);
+    }
+
+    .counter-icon {
+      color: var(--azul-principal);
+      font-size: 1.7rem;
+      margin-bottom: .75rem;
+    }
+
+    .counter-card h3 {
+      font-size: 1rem;
+      color: var(--azul-marinho);
+      margin-bottom: .8rem;
+    }
+
+    .counter-values {
+      font-size: clamp(1rem, 3vw, 1.25rem);
+      font-weight: 800;
+      color: var(--azul-principal);
+      overflow-wrap: anywhere;
+    }
+
+    .counter-detail {
+      margin-top: .5rem;
+      color: #64748b;
+      font-size: .8rem;
+    }
+
+    /* GALERIA */
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.25rem;
+    }
+
+    .gallery-item {
+      background: var(--branco);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: var(--sombra);
+      transition: var(--transicao);
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 290px;
+      object-fit: cover;
+      display: block;
+      background: var(--azul-claro);
+    }
+
+    .gallery-caption {
+      padding: 1rem;
+      text-align: center;
+      font-size: .9rem;
+      color: var(--azul-escuro);
+      font-weight: 600;
+    }
+
+    /* MÚSICA */
+
+    .music-card {
+      background: var(--branco);
+      padding: 2rem;
+      border-radius: 18px;
+      box-shadow: var(--sombra);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .music-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 65px;
+      height: 65px;
+      border-radius: 50%;
+      background: var(--azul-claro);
+      color: var(--azul-principal);
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .music-card h3 {
+      color: var(--azul-marinho);
+      font-size: 1.3rem;
+      margin-bottom: .3rem;
+    }
+
+    .music-card p {
+      color: #64748b;
+      margin-bottom: 1.5rem;
+    }
+
+    .iframe-container {
+      width: 100%;
+      max-width: 560px;
+      aspect-ratio: 16 / 9;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,.1);
+      background: var(--azul-claro);
+    }
+
+    .iframe-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .music-link {
+      margin-top: 1rem;
+      color: var(--azul-principal);
+      text-decoration: none;
+      font-size: .9rem;
+      font-weight: 700;
+    }
+
+    .music-link:hover {
+      text-decoration: underline;
+    }
+
+    /* DECLARAÇÃO */
+
+    .letter-card {
+      background: var(--branco);
+      padding: clamp(1.5rem, 5vw, 3rem);
+      border-radius: 18px;
+      box-shadow: var(--sombra);
+      border-left: 4px solid var(--azul-medio);
+      position: relative;
+    }
+
+    .letter-card .letter-greeting {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--azul-principal);
+      margin-bottom: 1.2rem;
+    }
+
+    .letter-card p {
+      margin-bottom: 1.2rem;
+      font-size: 1rem;
+      line-height: 1.9;
+    }
+
+    .letter-signature {
+      color: var(--azul-principal);
+      font-weight: 800;
+      font-size: 1.1rem;
+    }
+
+    /* ESPAÇO INTERATIVO */
+
+    .fun-section {
+      text-align: center;
+      background: linear-gradient(135deg, var(--azul-claro), var(--branco));
+      padding: 3rem 1.5rem;
+      border-radius: 18px;
+      box-shadow: var(--sombra);
+    }
+
+    .fun-section h2 {
+      color: var(--azul-marinho);
+      font-size: 1.6rem;
+      margin-bottom: .75rem;
+    }
+
+    .fun-section > p {
+      color: #475569;
+      max-width: 550px;
+      margin: 0 auto;
+    }
+
+    .btn-message {
+      border: none;
+      cursor: pointer;
+      margin-top: 1.5rem;
+      padding: .9rem 1.5rem;
+      border-radius: 50px;
+      color: var(--branco);
+      background: var(--azul-principal);
+      font-weight: 700;
+      transition: var(--transicao);
+    }
+
+    .btn-message:hover {
+      background: var(--azul-marinho);
+      transform: translateY(-3px);
+    }
+
+    .fun-message {
+      margin: 1.5rem auto 0;
+      max-width: 600px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--azul-principal);
+      min-height: 55px;
+    }
+
+    /* RODAPÉ */
+
+    footer {
+      background: var(--azul-marinho);
+      color: var(--branco);
+      text-align: center;
+      padding: 2.5rem 1.25rem;
+      font-size: .9rem;
+    }
+
+    footer p + p {
+      margin-top: .5rem;
+      color: #cbd5e1;
+    }
+
+    footer .footer-heart {
+      color: var(--azul-medio);
+    }
+
+    /* ANIMAÇÕES */
+
+    .fade-in {
+      animation: aparecer .8s ease both;
+    }
+
+    @keyframes aparecer {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 3rem 1rem;
+      }
+
+      .counters-grid,
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-item img {
+        height: 270px;
+      }
+
+      .music-card {
+        padding: 1.25rem;
+      }
+
+      .hero::before,
+      .hero::after {
+        font-size: 7rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- TELA INICIAL -->
+
+  <header class="hero">
+    <div class="hero-label">Um cantinho só nosso</div>
+
+    <h1>Fiz esse cantinho para você, mozi.</h1>
+
+    <p>
+      Um espaço especial para celebrar cada momento,
+      cada sorriso e cada pedacinho da nossa história.
+    </p>
+
+    <a href="#conteudo" class="btn-principal">
+      Ver nossa história
+      <i class="fa-solid fa-arrow-down"></i>
+    </a>
+
+    <div class="hero-note">
+      Feito com carinho, para a minha pessoa favorita.
+    </div>
+  </header>
+
+  <main class="container" id="conteudo">
+
+    <!-- NOSSA HISTÓRIA -->
+
+    <section id="historia">
+      <h2 class="section-title">Nossa História</h2>
+
+      <p class="section-subtitle">
+        Duas datas especiais e uma história que continuará sendo escrita.
+      </p>
+
+      <div class="timeline">
+
+        <article class="timeline-item">
+          <div class="timeline-date">14 de outubro de 2025</div>
+
+          <h3>O início de tudo</h3>
+
+          <p>
+            Foi quando voltamos a ficar e você se tornou a melhor escolha da minha vida. Sem eu perceber,
+            você começou a se tornar alguém cada vez mais especial, mais necessária. Ali que percebi: sem você, nada vale, nada possui graça, tudo incolor, tudo triste.
+          </p>
+        </article>
+
+        <article class="timeline-item">
+          <div class="timeline-date">08 de abril de 2026</div>
+
+          <h3>Nosso namoro oficial</h3>
+
+          <p>
+            O dia em que demos um nome ainda mais especial ao que
+            estávamos construindo. Desde então, tenho a alegria de
+            chamar você de minha namorada, meu amor, minha futura esposa. E, continuar vivendo tudo isso
+            ao seu lado, é gratificante demais para mim. Te vivo! 
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- CONTADORES AUTOMÁTICOS -->
+
+    <section id="contadores">
+      <h2 class="section-title">Nosso Tempo Juntos</h2>
+
+      <p class="section-subtitle">
+        Cada segundo faz parte da nossa história.
+      </p>
+
+      <div class="counters-grid">
+
+        <article class="counter-card">
+          <div class="counter-icon">
+            <i class="fa-regular fa-heart"></i>
+          </div>
+
+          <h3>Desde que começamos a ficar</h3>
+
+          <div class="counter-values" id="contador-ficar">
+            Calculando...
+          </div>
+
+          <div class="counter-detail" id="detalhe-ficar"></div>
+        </article>
+
+        <article class="counter-card">
+          <div class="counter-icon">
+            <i class="fa-solid fa-heart"></i>
+          </div>
+
+          <h3>Desde que começamos a namorar</h3>
+
+          <div class="counter-values" id="contador-namoro">
+            Calculando...
+          </div>
+
+          <div class="counter-detail" id="detalhe-namoro"></div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- GALERIA DE FOTOS -->
+
+    <section id="galeria">
+      <h2 class="section-title">Nossas Memórias</h2>
+
+      <p class="section-subtitle">
+        Alguns registros de momentos que quero guardar comigo.
+      </p>
+
+      <div class="gallery-grid">
+
+        <article class="gallery-item">
+          <img
+            src="fotos/foto1.jpg"
+            alt="Nossa primeira memória"
+            loading="lazy"
+          >
+          <div class="gallery-caption">
+            Meu lugar favorito é com você.
+          </div>
+        </article>
+
+        <article class="gallery-item">
+          <img
+            src="fotos/foto2.jpg"
+            alt="Um momento especial nosso"
+            loading="lazy"
+          >
+          <div class="gallery-caption">
+            Eu escolheria viver isso de novo.
+          </div>
+        </article>
+
+        <article class="gallery-item">
+          <img
+            src="fotos/foto3.jpg"
+            alt="Um registro nosso"
+            loading="lazy"
+          >
+          <div class="gallery-caption">
+            Companhia perfeita em todos os momentos.
+          </div>
+        </article>
+
+        <article class="gallery-item">
+          <img
+            src="fotos/foto4.jpg"
+            alt="Mais uma lembrança especial"
+            loading="lazy"
+          >
+          <div class="gallery-caption">
+            Tudo fica mais bonito quando é nosso.
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- NOSSA MÚSICA -->
+
+    <section id="musica">
+      <h2 class="section-title">Nossa Música</h2>
+
+      <p class="section-subtitle">
+        Porque algumas músicas acabam contando um pouquinho da gente.
+      </p>
+
+      <div class="music-card">
+
+        <div class="music-icon">
+          <i class="fa-solid fa-music"></i>
+        </div>
+
+        <h3>Tanto Faz — Luan Santana</h3>
+
+        <p>A nossa trilha sonora.</p>
+
+        <div class="iframe-container">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/hAV_q_cW8Os"
+            title="Tanto Faz - Luan Santana"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+
+        <a
+          class="music-link"
+          href="https://www.youtube.com/watch?v=hAV_q_cW8Os"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="fa-brands fa-youtube"></i>
+          Abrir música no YouTube
+        </a>
+
+      </div>
+    </section>
+
+    <!-- DECLARAÇÃO -->
+
+    <section id="declaracao">
+      <h2 class="section-title">Para Você</h2>
+
+      <p class="section-subtitle">
+        Algumas coisas merecem ser ditas com calma.
+      </p>
+
+      <div class="letter-card">
+
+        <p class="letter-greeting">Vida,</p>
+
+        <p>
+          Queria criar algo diferente para te mostrar o quanto você
+          é importante para mim. Desde outubro do ano passado, quando
+          começamos a ficar, minha rotina ganhou muito mais cor e
+          leveza. E quando oficializamos nosso namoro, em abril,
+          ganhei mais um motivo para sorrir e agradecer por ter você
+          comigo.
+        </p>
+
+        <p>
+          Mô, talvez eu não consiga colocar em palavras tudo o que
+          sinto, mas quero que você saiba que a sua presença faz
+          diferença nos meus dias. Eu amo nossas conversas, nossas
+          brincadeiras, nossos momentos bobos e até aquelas pequenas
+          coisas que, para outras pessoas, podem parecer simples,
+          mas que para mim se tornam lembranças especiais.
+        </p>
+
+        <p>
+          Momô, eu sei que amar também é aprender. É descobrir como
+          cuidar melhor um do outro, prestar atenção nos detalhes,
+          ouvir com carinho e demonstrar o que sentimos não apenas
+          com palavras, mas também com atitudes. Quero continuar
+          aprendendo a ser alguém que te faça bem, sem deixar de
+          construir, junto com você, uma relação em que os dois
+          possam ser felizes e verdadeiros.
+        </p>
+
+        <p>
+          Não quero que nossa história seja perfeita. Quero que ela
+          seja nossa: cheia de carinho, respeito, risadas, conversas
+          sinceras, planos e vontade de continuar escolhendo um ao
+          outro. Que a gente nunca perca a capacidade de enxergar
+          beleza nas pequenas coisas e de encontrar motivos para
+          comemorar o que estamos construindo.
+        </p>
+
+        <p>
+          Minha vida, se eu pudesse te dar uma certeza hoje, seria
+          esta: você é muito especial para mim. E este site é só
+          uma pequena tentativa de transformar um pouquinho do que
+          sinto em algo que você possa visitar, reler e guardar.
+        </p>
+
+        <p>
+          Obrigado por fazer parte da minha história e por dividir
+          comigo tantos momentos. Que ainda existam muitas datas
+          para celebrar, fotografias para guardar, músicas para
+          cantar e memórias para construir.
+        </p>
+
+        <p>
+          Eu te amo, vida. Que esse seja apenas mais um capítulo
+          bonito da nossa história.
+        </p>
+
+        <p class="letter-signature">
+          Com todo o meu amor,<br>
+          Seu namorado. 💙
+        </p>
+
+      </div>
+    </section>
+
+    <!-- MENSAGENS INTERATIVAS -->
+
+    <section id="surpresa">
+      <div class="fun-section">
+
+        <h2>Ei, mô... tenho algo pra te dizer.</h2>
+
+        <p>
+          Fiz uma pequena surpresa para você. Clique no botão e
+          descubra uma das coisas que quero te lembrar.
+        </p>
+
+        <button
+          class="btn-message"
+          id="botao-mensagem"
+          type="button"
+        >
+          Uma mensagem para mim
+          <i class="fa-solid fa-heart"></i>
+        </button>
+
+        <div
+          class="fun-message"
+          id="mensagem-especial"
+          aria-live="polite"
+        ></div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- RODAPÉ -->
+
+  <footer>
+    <p>
+      Feito com <span class="footer-heart">♥</span> para a minha pessoa favorita.
+    </p>
+
+    <p>
+      Nossa história começou antes do primeiro capítulo deste site.
+    </p>
+
+    <p>
+      <span id="ano-atual"></span> — Um cantinho nosso.
+    </p>
+  </footer>
+
+  <!-- JAVASCRIPT -->
+
+  <script>
+    "use strict";
+
+    /*
+      DATAS IMPORTANTES
+
+      Início de quando começamos a ficar:
+      14/10/2025
+
+      Início oficial do namoro:
+      08/04/2026
+
+      Os horários abaixo são considerados como meia-noite,
+      no horário local do dispositivo.
+    */
+
+    const dataFicar = new Date(2025, 9, 14, 0, 0, 0);
+    const dataNamoro = new Date(2026, 3, 8, 0, 0, 0);
+
+    function calcularDiferenca(dataInicial, agora) {
+      if (agora < dataInicial) {
+        return null;
+      }
+
+      let anos = agora.getFullYear() - dataInicial.getFullYear();
+      let meses = agora.getMonth() - dataInicial.getMonth();
+      let dias = agora.getDate() - dataInicial.getDate();
+
+      if (dias < 0) {
+        meses--;
+
+        const ultimoDiaMesAnterior = new Date(
+          agora.getFullYear(),
+          agora.getMonth(),
+          0
+        ).getDate();
+
+        dias += ultimoDiaMesAnterior;
+      }
+
+      if (meses < 0) {
+        anos--;
+        meses += 12;
+      }
+
+      const inicioDoDia = new Date(
+        agora.getFullYear(),
+        agora.getMonth(),
+        agora.getDate()
+      );
+
+      const inicioAnterior = new Date(
+        dataInicial.getFullYear(),
+        dataInicial.getMonth(),
+        dataInicial.getDate()
+      );
+
+      const totalDias = Math.floor(
+        (inicioDoDia.getTime() - inicioAnterior.getTime()) /
+        86400000
+      );
+
+      const totalSegundos = Math.max(
+        0,
+        Math.floor((agora.getTime() - dataInicial.getTime()) / 1000)
+      );
+
+      const horas = Math.floor(totalSegundos / 3600) % 24;
+      const minutos = Math.floor(totalSegundos / 60) % 60;
+      const segundos = totalSegundos % 60;
+
+      return {
+        anos,
+        meses,
+        dias,
+        totalDias,
+        horas,
+        minutos,
+        segundos
+      };
+    }
+
+    function formatarTempo(diferenca) {
+      if (!diferenca) {
+        return "Ainda vai começar!";
+      }
+
+      const partes = [];
+
+      if (diferenca.anos > 0) {
+        partes.push(
+          diferenca.anos + (diferenca.anos === 1 ? " ano" : " anos")
+        );
+      }
+
+      if (diferenca.meses > 0) {
+        partes.push(
+          diferenca.meses + (diferenca.meses === 1 ? " mês" : " meses")
+        );
+      }
+
+      partes.push(
+        diferenca.dias + (diferenca.dias === 1 ? " dia" : " dias")
+      );
+
+      partes.push(
+        String(diferenca.horas).padStart(2, "0") + "h"
+      );
+
+      partes.push(
+        String(diferenca.minutos).padStart(2, "0") + "min"
+      );
+
+      partes.push(
+        String(diferenca.segundos).padStart(2, "0") + "s"
+      );
+
+      return partes.join(" ");
+    }
+
+    function atualizarContadores() {
+      const agora = new Date();
+
+      const ficar = calcularDiferenca(dataFicar, agora);
+      const namoro = calcularDiferenca(dataNamoro, agora);
+
+      document.getElementById("contador-ficar").textContent =
+        formatarTempo(ficar);
+
+      document.getElementById("contador-namoro").textContent =
+        formatarTempo(namoro);
+
+      document.getElementById("detalhe-ficar").textContent =
+        ficar
+          ? "São " + ficar.totalDias.toLocaleString("pt-BR") +
+            " dias de história."
+          : "Nossa história está prestes a começar.";
+
+      document.getElementById("detalhe-namoro").textContent =
+        namoro
+          ? "São " + namoro.totalDias.toLocaleString("pt-BR") +
+            " dias de namoro."
+          : "O nosso namoro ainda vai começar.";
+    }
+
+    // Atualiza os contadores imediatamente e a cada segundo.
+    atualizarContadores();
+    setInterval(atualizarContadores, 1000);
+
+    // Ano do rodapé.
+    document.getElementById("ano-atual").textContent =
+      new Date().getFullYear();
+
+    // Mensagens carinhosas aleatórias.
+    const mensagens = [
+      "Mô, se eu pudesse escolher de novo, ainda escolheria você. 💙",
+      "Vida, você transforma pequenos momentos em lembranças enormes.",
+      "Momô, nunca se esqueça do quanto você é especial para mim.",
+      "Meu lugar favorito não é um lugar: é estar com você.",
+      "Amor, quero continuar construindo memórias bonitas ao seu lado.",
+      "Ei, mô! Só passando para lembrar que você é muito importante para mim.",
+      "Vida, que nunca faltem motivos para a gente sorrir junto.",
+      "Momô, entre tantas coisas boas, conhecer você foi uma delas.",
+      "Amor, cada capítulo nosso ainda tem muita coisa bonita pela frente.",
+      "Mô, esta é só uma página. O resto da nossa história a gente escreve juntos."
+    ];
+
+    let ultimaMensagem = -1;
+
+    const botaoMensagem = document.getElementById("botao-mensagem");
+    const areaMensagem = document.getElementById("mensagem-especial");
+
+    botaoMensagem.addEventListener("click", function () {
+      let indice;
+
+      do {
+        indice = Math.floor(Math.random() * mensagens.length);
+      } while (mensagens.length > 1 && indice === ultimaMensagem);
+
+      ultimaMensagem = indice;
+
+      areaMensagem.textContent = mensagens[indice];
+      areaMensagem.classList.remove("fade-in");
+
+      // Reinicia a animação a cada clique.
+      void areaMensagem.offsetWidth;
+
+      areaMensagem.classList.add("fade-in");
+    });
+  </script>
+
+</body>
+</html>
